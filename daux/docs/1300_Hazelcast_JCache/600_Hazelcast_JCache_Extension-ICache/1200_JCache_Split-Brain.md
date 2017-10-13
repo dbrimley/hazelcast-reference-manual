@@ -1,5 +1,5 @@
 
-Split-Brain handling is internally supported as a service inside Hazelcast (see [Network Partitioning](/2600_Network_Partitioning) for more details) and `JCache` uses same infrastructure with `IMap` to support Split-Brain. You can specify cache merge policy to determine which entry is used while merging. You can also provide your own cache merge policy implementations through `CacheMergePolicyInterface`.
+Split-Brain handling is internally supported as a service inside Hazelcast (see [Network Partitioning](/2600_Network_Partitioning) for more details) and `JCache` uses same infrastructure with `IMap` to support Split-Brain. You can specify cache merge policy to determine which entry is used while merging. You can also provide your own cache merge policy by implementing the `CacheMergePolicy` interface..
 
 ![image](../../images/NoteSmall.jpg) ***NOTE:*** *Split-Brain is only supported for heap-based JCache but not for HD-JCache, since merging a high volume of data in consistent way may cause significant performance loss on the system.*
 
@@ -37,6 +37,9 @@ There are four built-in cache merge policies:
 - **Put If Absent:** Merges cache entry from source to destination if it does not exist in the destination cache. You can specify this policy with its full class name as `com.hazelcast.cache.merge.PutIfAbsentCacheMergePolicy` or with its constant name as `PUT_IF_ABSENT`.
 - **Higher Hits:** Merges cache entry from source to destination cache if the source entry has more hits than the destination one. You can specify this policy with its full class name as `com.hazelcast.cache.merge.HigherHitsCacheMergePolicy` or with its constant name as `HIGHER_HITS`.
 - **Latest Access:** Merges cache entry from source to destination cache if the source entry has been accessed more recently than the destination entry. You can specify this policy with its full class name as `com.hazelcast.cache.merge.LatestAccessCacheMergePolicy` or with its constant name as `LATEST_ACCESS`.
+
+![image](../../images/NoteSmall.jpg) ***NOTE:*** *Starting with Hazelcast 3.9, the default `Cache` merge policy is **Put If Absent**. It was **Pass Through** before Hazelcast 3.9.*
+
 
 You can access full class names or constant names of all built-in cache merge policies over `com.hazelcast.cache.BuiltInCacheMergePolicies` enum. You can specify merge policy configuration for cache declaratively or programmatically.
 
