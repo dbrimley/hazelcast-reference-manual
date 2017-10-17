@@ -14,6 +14,7 @@ This chapter lists the changes made to this document from the previous release.
 |[User Code Deployment](/04_Setting_Up_Clusters/07_User_Code_Deployment_-_BETA.md)|Added "Example for Member Filtering Members" as a new section to explain how to use the `provider-filter` element.
 |[Client User Code Deployment](/04_Setting_Up_Clusters/07_Client_User_Code_Deployment_-_BETA.md)|Added as a new section.
 |[Failure Detector Configuration](/600_Setting_Up_Clusters/1200_Failure_Detector_Configuration.md)| Added as a new section to explain Hazelcast's Deadline and Phi Accrual failure detectors.
+|[Member Address Provider SPI](/600_Setting_Up_Clusters/1100_Other_Network_Configurations.md#page_Member+Address+Provider+SPI)
 |[Lock](/06_Distributed_Data_Structures/900_Lock.md)|Added "Lock vs. IMap.lock" as a new section.
 |[Event Journal](/06_Distributed_Data_Structures/1700_Event_Journal.md)| Added as a new section to explain the event journal distributed data structure that stores the history of mutation actions on the data structures such as map or cache.
 |[Entry Processor](/08_Distributed_Computing/03_Entry_Processor)|Added the new section "Entry Processor Optimization" explaining Offloadable and Readonly entry processors.|
