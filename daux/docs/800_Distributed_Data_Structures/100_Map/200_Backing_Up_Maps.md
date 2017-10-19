@@ -49,7 +49,7 @@ To create asynchronous backups, select the number of async backups with the `asy
 
 By default, Hazelcast has one sync backup copy. If `backup-count` is set to more than 1, then each member will carry both owned entries and backup copies of other members. So for the `map.get(key)` call, it is possible that the calling member has a backup copy of that key. By default, `map.get(key)` will always read the value from the actual owner of the key for consistency.
 
-To enable backup reads (read local backup entries), set the value of the `read-backup-data` property to **true**. Its default value is **false** for strong consistency. Enabling backup reads can improve performance. 
+To enable backup reads (read local backup entries), set the value of the `read-backup-data` property to **true**. Its default value is **false** for higher read consistency. Enabling backup reads can improve performance. 
 
 ```xml
 <hazelcast>
